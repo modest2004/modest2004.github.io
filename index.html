@@ -71,10 +71,156 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-搭建一个校园二手交易平台小程序的全套流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-js笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/09/28/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%A0%A1%E5%9B%AD%E4%BA%8C%E6%89%8B%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%85%A8%E5%A5%97%E6%B5%81%E7%A8%8B/" class="article-date">
-  <time class="dt-published" datetime="2025-09-28T07:39:33.000Z" itemprop="datePublished">2025-09-28</time>
+    <a href="/2025/10/30/js%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2025-10-30T12:08:59.766Z" itemprop="datePublished">2025-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="知识点1："><a href="#知识点1：" class="headerlink" title="知识点1："></a><strong>知识点1</strong>：</h2><p><code>NaN</code>; &#x2F;&#x2F; <code>NaN</code>表示<code>Not a Number</code>，当无法计算结果时用<code>NaN</code>表示</p>
+<p>唯一能判断<code>NaN</code>的方法是通过<code>isNaN()</code>函数</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">&quot;hello script&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> r = <span class="number">125.89</span>;</span><br><span class="line"><span class="keyword">var</span> s = <span class="number">3.14</span> * r * r;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Number</span>.<span class="property">MAX_SAFE_INTEGER</span>);</span><br><span class="line"><span class="title function_">alert</span>(<span class="string">&quot;结果是：&quot;</span> + s)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">19</span>;</span><br><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">18</span>) &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&#x27;adult&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&#x27;teenager&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="知识点2："><a href="#知识点2：" class="headerlink" title="知识点2："></a><strong>知识点2</strong>：</h2><p>第一种是<code>==</code>比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；</p>
+<p>第二种是<code>===</code>比较，它不会自动转换数据类型，如果数据类型不一致，返回<code>false</code>，如果一致，再比较。</p>
+<p>由于JavaScript这个设计缺陷，<em>不要</em>使用<code>==</code>比较，始终坚持使用<code>===</code>比较。</p>
+<h2 id="知识点3："><a href="#知识点3：" class="headerlink" title="知识点3："></a><strong>知识点3</strong>：</h2><p>在JavaScript中，使用等号<code>=</code>对变量进行赋值。可以把任意数据类型赋值给变量，同一个变量可以反复赋值，而且可以是不同类型的变量，但是要注意只能用<code>var</code>申明一次。</p>
+<h2 id="知识点4："><a href="#知识点4：" class="headerlink" title="知识点4："></a><strong>知识点4</strong>：</h2><ul>
+<li><code>toUpperCase()</code>把一个字符串全部变为大写</li>
+<li><code>toLowerCase()</code>把一个字符串全部变为小写</li>
+<li><code>indexOf()</code>会搜索指定字符串出现的位置</li>
+<li><code>substring()</code>返回指定索引区间的子串</li>
+</ul>
+<h2 id="知识点5："><a href="#知识点5：" class="headerlink" title="知识点5："></a>知识点5：</h2><h3 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h3><p><code>slice()</code>就是对应String的<code>substring()</code>版本，它截取<code>Array</code>的部分元素，然后返回一个新的<code>Array</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>];</span><br><span class="line">arr.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// 从索引0开始，到索引3结束，但不包括索引3: [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;]</span></span><br><span class="line">arr.<span class="title function_">slice</span>(<span class="number">3</span>); <span class="comment">// 从索引3开始到结束: [&#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;, &#x27;G&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p>注意到<code>slice()</code>的起止参数包括开始索引，不包括结束索引。</p>
+<p>如果不给<code>slice()</code>传递任何参数，它就会从头到尾截取所有元素。利用这一点，我们可以很容易地复制一个<code>Array</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> aCopy = arr.<span class="title function_">slice</span>();</span><br><span class="line">aCopy; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;, &#x27;G&#x27;]</span></span><br><span class="line">aCopy === arr; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="push和pop"><a href="#push和pop" class="headerlink" title="push和pop"></a>push和pop</h3><p><code>push()</code>向<code>Array</code>的末尾添加若干元素，<code>pop()</code>则把<code>Array</code>的最后一个元素删除掉</p>
+<h3 id="unshift和shift"><a href="#unshift和shift" class="headerlink" title="unshift和shift"></a>unshift和shift</h3><p>如果要往<code>Array</code>的头部添加若干元素，使用<code>unshift()</code>方法，<code>shift()</code>方法则把<code>Array</code>的第一个元素删掉</p>
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h3><p><code>splice()</code>方法是修改<code>Array</code>的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;Microsoft&#x27;</span>, <span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Yahoo&#x27;</span>, <span class="string">&#x27;AOL&#x27;</span>, <span class="string">&#x27;Excite&#x27;</span>, <span class="string">&#x27;Oracle&#x27;</span>];</span><br><span class="line"><span class="comment">// 从索引2开始删除3个元素,然后再添加两个元素:</span></span><br><span class="line">arr.<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">3</span>, <span class="string">&#x27;Google&#x27;</span>, <span class="string">&#x27;Facebook&#x27;</span>); <span class="comment">// 返回删除的元素 [&#x27;Yahoo&#x27;, &#x27;AOL&#x27;, &#x27;Excite&#x27;]</span></span><br><span class="line">arr; <span class="comment">// [&#x27;Microsoft&#x27;, &#x27;Apple&#x27;, &#x27;Google&#x27;, &#x27;Facebook&#x27;, &#x27;Oracle&#x27;]</span></span><br><span class="line"><span class="comment">// 只删除,不添加:</span></span><br><span class="line">arr.<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">2</span>); <span class="comment">// [&#x27;Google&#x27;, &#x27;Facebook&#x27;]</span></span><br><span class="line">arr; <span class="comment">// [&#x27;Microsoft&#x27;, &#x27;Apple&#x27;, &#x27;Oracle&#x27;]</span></span><br><span class="line"><span class="comment">// 只添加,不删除:</span></span><br><span class="line">arr.<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">0</span>, <span class="string">&#x27;Google&#x27;</span>, <span class="string">&#x27;Facebook&#x27;</span>); <span class="comment">// 返回[],因为没有删除任何元素</span></span><br><span class="line">arr; <span class="comment">// [&#x27;Microsoft&#x27;, &#x27;Apple&#x27;, &#x27;Google&#x27;, &#x27;Facebook&#x27;, &#x27;Oracle&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><p><code>concat()</code>方法把当前的Array和另一个<code>Array</code>连接起来，并返回一个新的<code>Array</code></p>
+<h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><p><code>join()</code>方法是一个非常实用的方法，它把当前<code>Array</code>的每个元素都用指定的字符串连接起来，然后返回连接后的字符串</p>
+<h2 id="知识点6："><a href="#知识点6：" class="headerlink" title="知识点6："></a>知识点6：</h2><p>访问属性是通过<code>.</code>操作符完成的，但这要求属性名必须是一个有效的变量名。如果属性名包含特殊字符，就必须用<code>&#39;&#39;</code>括起来：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xiaohong = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;小红&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;middle-school&#x27;</span>: <span class="string">&#x27;No.1 Middle School&#x27;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>要判断一个属性是否是<code>xiaoming</code>自身拥有的，而不是继承得到的，可以用<code>hasOwnProperty()</code>方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xiaoming = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;小明&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line">xiaoming.<span class="title function_">hasOwnProperty</span>(<span class="string">&#x27;name&#x27;</span>); <span class="comment">// true</span></span><br><span class="line">xiaoming.<span class="title function_">hasOwnProperty</span>(<span class="string">&#x27;toString&#x27;</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="知识点7："><a href="#知识点7：" class="headerlink" title="知识点7："></a>知识点7：</h2><p>利用循环遍历数组中的每个名字，并显示<code>Hello，xxx！</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;Bart&#x27;</span>, <span class="string">&#x27;Lisa&#x27;</span>, <span class="string">&#x27;Adam&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;for正序：&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.<span class="property">length</span>;i++)&#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`hello,<span class="subst">$&#123;arr[i]&#125;</span>!`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;for倒序：&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=arr.<span class="property">length</span>-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`hello,<span class="subst">$&#123;arr[i]&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;while正序：&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(j&lt;arr.<span class="property">length</span>)&#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`hello,<span class="subst">$&#123;arr[j]&#125;</span>`</span>);</span><br><span class="line">j++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;while倒序：&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> k=arr.<span class="property">length</span>-<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(k&gt;=<span class="number">0</span>)&#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`hello,<span class="subst">$&#123;arr[k]&#125;</span>`</span>);</span><br><span class="line">k--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="知识点8："><a href="#知识点8：" class="headerlink" title="知识点8："></a>知识点8：</h2><h3 id="JavaScript两种类型的作用域"><a href="#JavaScript两种类型的作用域" class="headerlink" title="JavaScript两种类型的作用域"></a>JavaScript两种类型的作用域</h3><p><strong>全局作用域</strong></p>
+<p>全局（在函数之外）声明的变量拥有全局作用域。全局变量可以在 JavaScript 程序中的任何位置访问。</p>
+<p>函数作用域</p>
+<p>局部（函数内）声明的变量拥有函数作用域。局部变量只能在它们被声明的函数内访问。</p>
+<h2 id="知识点9："><a href="#知识点9：" class="headerlink" title="知识点9："></a>知识点9：</h2><p>11 &amp;&amp; 22都是真，则返回最后一个真值。</p>
+<p>11 || 22都是真，则返回第一个真值。</p>
+<p>&amp;&amp;，左边为false就短路</p>
+<p>||，左边为true就短路</p>
+<h2 id="10"><a href="#10" class="headerlink" title="10"></a>10</h2><p>对象也是变量。但是对象包含很多值。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://modest2004.github.io/2025/10/30/js%E7%AC%94%E8%AE%B0/" data-id="cmhddz11c0005b8p10bzagfvl" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-html和css笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/10/30/html%E5%92%8Ccss%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2025-10-30T12:08:40.338Z" itemprop="datePublished">2025-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>三件套：html，css，JavaScript</p>
+<p>总的来说就一句话：基础三件套-&gt;巩固基础-&gt;学习框架-&gt;多做项目-&gt;按需学习-&gt;拓宽视野-&gt;</p>
+<p><strong>知识点1</strong>：</p>
+<nav> 标签定义导航链接的部分。
+
+<p>并不是所有的 HTML 文档都要使用到 <nav> 元素。<nav> 元素只是作为标注一个导航链接的区域。</p>
+<p><strong>知识点2</strong>：</p>
+<ul> 标签定义无序列表。
+
+<p>将 <ul> 标签与<li>标签一起使用，创建无序列表。</p>
+<p><strong>知识点3</strong>：</p>
+<p><code>alt</code> 属性是一个必需的属性，它规定在图像无法显示时的替代文本。</p>
+<p>语法</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">alt</span>=<span class="string">&quot;text&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>知识点4</strong>：</p>
+<ol>
+<li><code>CSS</code>书写顺序：</li>
+<li>盒子模型属性</li>
+<li>文字样式</li>
+<li>圆角、阴影等修饰属性</li>
+</ol>
+<p><strong>知识点5</strong>：</p>
+<ul>
+<li>标签结构</li>
+</ul>
+<p><code>div&gt;ul&gt;li&#123;$&#125;*4</code></p>
+<ul>
+<li><code>ul</code>样式</li>
+</ul>
+<ol>
+<li><code>flex</code>布局</li>
+<li>弹性换行<code>flex-wrap:wrap</code></li>
+<li>主轴对齐方式：<code>space-between</code></li>
+<li>行对齐方式：<code>space-between</code></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://modest2004.github.io/2025/10/30/html%E5%92%8Ccss%E7%AC%94%E8%AE%B0/" data-id="cmhddz11b0004b8p14pcz0xc5" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/10/30/Java%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2025-10-30T11:44:40.000Z" itemprop="datePublished">2025-10-30</time>
 </a>
     
   </div>
@@ -85,7 +231,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/09/28/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%A0%A1%E5%9B%AD%E4%BA%8C%E6%89%8B%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%85%A8%E5%A5%97%E6%B5%81%E7%A8%8B/">搭建一个校园二手交易平台小程序的全套流程</a>
+      <a class="p-name article-title" href="/2025/10/30/Java%E7%AC%94%E8%AE%B0/">Java笔记</a>
     </h1>
   
 
@@ -93,11 +239,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>l</p>
+<h3 id="来自刷题的一些笔记"><a href="#来自刷题的一些笔记" class="headerlink" title="来自刷题的一些笔记"></a>来自刷题的一些笔记</h3><p>1.创建<code>StringBuilder</code>对象<code>ans</code>，用于高效拼接结果字符串（相比<code>String</code>拼接，<code>StringBuilder</code>性能更优）。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://modest2004.github.io/2025/09/28/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%A0%A1%E5%9B%AD%E4%BA%8C%E6%89%8B%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%85%A8%E5%A5%97%E6%B5%81%E7%A8%8B/" data-id="cmg3jxism000ancp100qvctqe" data-title="搭建一个校园二手交易平台小程序的全套流程" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://modest2004.github.io/2025/10/30/Java%E7%AC%94%E8%AE%B0/" data-id="cmhddz1180001b8p14jp51ma8" data-title="Java笔记" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -143,14 +291,48 @@
 
 <p>在Linux和macOS中，路径是由正斜杠（”&#x2F;“）分隔的。</p>
 <p>绝对路径是能完全确定文件位置的路径</p>
-<p>cd代表更改目录，”.“表示当前目录，”..“表示父目录。</p>
-<p>”~“回到主目录下。</p>
-<h1 id="shell工具和脚本"><a href="#shell工具和脚本" class="headerlink" title="shell工具和脚本"></a>shell工具和脚本</h1><p><img src="/coverphoto.jpg" alt="coverphoto"></p>
-
+<p><code>cd</code>代表更改目录，”<code>.</code>“表示当前目录，”<code>..</code>“表示父目录。</p>
+<p><code>pwd</code>:查看当面目录中有哪些内容</p>
+<p><code>ls</code>:列出当前目录中的文件</p>
+<p><code>cd..</code>:返回上一级</p>
+<p><code>~</code>:回到主目录下。</p>
+<p><code>&lt;</code>:查看，<code>&gt;</code>:输出</p>
+<p><code>sudo su</code>:可以以超级用户身份获取一个<code>shell</code></p>
+<p>在进入<code>root</code>的情况下可以执行成功的命令：<code>echo 500 &gt; brightness</code></p>
+<p><code>exit</code>:退出<code>root</code></p>
+<p>不需要进入root就可以执行成功的命令：<code>echo 1060 | sudo tee brightness</code>(更好的方法)</p>
+<p><code>xdg-open</code>：在适当的程序打开它，后面加文件名</p>
+<h1 id="shell工具和脚本"><a href="#shell工具和脚本" class="headerlink" title="shell工具和脚本"></a>shell工具和脚本</h1><h3 id="知识点1"><a href="#知识点1" class="headerlink" title="知识点1"></a>知识点1</h3><p><strong>插入模式</strong></p>
+<ul>
+<li>进入方式：按<code>i</code>，<code>a</code>，<code>o</code>等键</li>
+<li>退出方式：按<code>Esc</code></li>
+</ul>
+<p><strong>可视模式</strong>：</p>
+<ul>
+<li>进入方式：按<code>v</code>，<code>V</code>，<code>Ctrl+v</code></li>
+<li>退出方式：按<code>Esc</code></li>
+</ul>
+<p><strong>命令模式</strong>：</p>
+<ul>
+<li><p>进入方式：普通模式下按<code>：</code></p>
+</li>
+<li><p>保存并退出：<code>wq</code></p>
+</li>
+</ul>
+<h3 id="知识点2"><a href="#知识点2" class="headerlink" title="知识点2"></a>知识点2</h3><p>在 Linux&#x2F;Unix 系统的 shell（如 bash）中，<code>echo $?</code> 用于<strong>查看上一条命令的退出状态码</strong>。</p>
+<ul>
+<li><p><code>$?</code> 是一个特殊的环境变量，它会自动保存 “上一条执行的命令” 的退出状态（返回值）。</p>
+</li>
+<li><p><code>echo $?</code> 则是将这个状态码打印出来。</p>
+</li>
+</ul>
+<h3 id="知识点3"><a href="#知识点3" class="headerlink" title="知识点3"></a>知识点3</h3><p><code>!!</code> 是 shell 提供的<strong>历史扩展符</strong>，它的含义是 “引用上一条执行的命令”。</p>
+<h3 id="知识点4"><a href="#知识点4" class="headerlink" title="知识点4"></a>知识点4</h3><p><code>grep</code> 是一个<strong>强大的文本搜索工具</strong>，例如在 <code>test.txt</code> 中搜索 “hello”：<code>grep &quot;hello&quot; test.txt</code></p>
+<h3 id="知识点5"><a href="#知识点5" class="headerlink" title="知识点5"></a>知识点5</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://modest2004.github.io/2025/09/25/%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BD%BF%E7%94%A8shell/" data-id="cmg3jxisk0005ncp154pz1r5x" data-title="学习和使用shell" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://modest2004.github.io/2025/09/25/%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BD%BF%E7%94%A8shell/" data-id="cmhddz11l0009b8p14f5h6ghl" data-title="学习和使用shell" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -212,67 +394,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://modest2004.github.io/2025/09/18/CS50%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" data-id="cmg3jxise0000ncp17fqvgxfm" data-title="CS50计算机导论" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://modest2004.github.io/2025/09/18/CS50%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" data-id="cmhddz1150000b8p17agjbgmq" data-title="CS50计算机导论" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-如何搭建属于自己的个人博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/09/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time class="dt-published" datetime="2025-09-15T12:11:51.000Z" itemprop="datePublished">2025-09-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/09/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">如何搭建属于自己的个人博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Hexo-GitHub-Pages搭建个人博客教程"><a href="#Hexo-GitHub-Pages搭建个人博客教程" class="headerlink" title="Hexo+GitHub Pages搭建个人博客教程"></a>Hexo+GitHub Pages搭建个人博客教程</h1><h2 id="一、准备"><a href="#一、准备" class="headerlink" title="一、准备"></a>一、准备</h2><p>1.首先需要拥有一个GitHub的个人账号，可以去官网注册一个，填写个人邮箱。</p>
-<p>2.本次是基于git来部署的，所以需要配置环境，包括安装git和nodejs，要是已安装可以去终端检测是否安装成功。（win+r调出cmd命令行窗口，按照示例输入。）</p>
-<p>git安装官网：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads/win">Git - Downloading Package</a></p>
-<p>node.js安装官网：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download">Node.js — Download Node.js®</a></p>
-<img src="D:\MyBlog\myblog\source\img\个人博客搭建教程\image-20250915202548541.png" alt="image-20250915202548541" style="zoom: 50%;" />
-
-<h2 id="二、搭建本地博客（Hexo主题）"><a href="#二、搭建本地博客（Hexo主题）" class="headerlink" title="二、搭建本地博客（Hexo主题）"></a>二、搭建本地博客（Hexo主题）</h2><h3 id="1-创建项目文件夹"><a href="#1-创建项目文件夹" class="headerlink" title="1.创建项目文件夹"></a>1.创建项目文件夹</h3><ul>
-<li><p>新建一个文件夹用来存储博客，如我创建的MyBlog，完整路径就是D:\MyBlog,建议路径不要包含中文字符。</p>
-</li>
-<li><p>创建完之后，然后鼠标右键点击，进入Open Git Bash here，接着进入命令行界面，然后输入npm install -g hexo-cli，将 Hexo 命令行工具安装到系统的全局环境中。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myself@modest0326 MINGW64 /d/MyBlog</span><br><span class="line">$ npm install -g hexo -cli</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://modest2004.github.io/2025/09/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cmg3jxisl0009ncp1am2j1bly" data-title="如何搭建属于自己的个人博客" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA/" rel="tag">个人</a></li></ul>
 
     </footer>
   </div>
@@ -318,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://modest2004.github.io/2025/09/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/" data-id="cmg3jxisn000bncp19nef7ign" data-title="风骚律师观看指南" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://modest2004.github.io/2025/09/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/" data-id="cmhddz11m000ab8p1ack7gery" data-title="风骚律师观看指南" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -371,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://modest2004.github.io/2025/09/11/hello-world/" data-id="cmg3jxisk0006ncp19i575ob4" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://modest2004.github.io/2025/09/11/hello-world/" data-id="cmhddz11l0008b8p13tnc8um4" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -403,7 +529,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA/" rel="tag">个人</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" rel="tag">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%89%A7/" rel="tag">美剧</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" rel="tag">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%89%A7/" rel="tag">美剧</a></li></ul>
     </div>
   </div>
 
@@ -413,7 +539,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E4%B8%AA%E4%BA%BA/" style="font-size: 10px;">个人</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">学习笔记</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" style="font-size: 10px;">工具使用</a> <a href="/tags/%E7%BE%8E%E5%89%A7/" style="font-size: 10px;">美剧</a>
+      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">学习笔记</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" style="font-size: 10px;">工具使用</a> <a href="/tags/%E7%BE%8E%E5%89%A7/" style="font-size: 10px;">美剧</a>
     </div>
   </div>
 
@@ -422,7 +548,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li></ul>
     </div>
   </div>
 
@@ -435,7 +561,15 @@
       <ul>
         
           <li>
-            <a href="/2025/09/28/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%A0%A1%E5%9B%AD%E4%BA%8C%E6%89%8B%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%85%A8%E5%A5%97%E6%B5%81%E7%A8%8B/">搭建一个校园二手交易平台小程序的全套流程</a>
+            <a href="/2025/10/30/js%E7%AC%94%E8%AE%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/30/html%E5%92%8Ccss%E7%AC%94%E8%AE%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/30/Java%E7%AC%94%E8%AE%B0/">Java笔记</a>
           </li>
         
           <li>
@@ -444,14 +578,6 @@
         
           <li>
             <a href="/2025/09/18/CS50%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/">CS50计算机导论</a>
-          </li>
-        
-          <li>
-            <a href="/2025/09/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">如何搭建属于自己的个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2025/09/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/">风骚律师观看指南</a>
           </li>
         
       </ul>

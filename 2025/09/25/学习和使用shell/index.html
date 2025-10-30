@@ -13,13 +13,11 @@
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="学习和使用shell工具">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://modest2004.github.io/coverphoto.jpg">
 <meta property="article:published_time" content="2025-09-25T12:10:55.000Z">
 <meta property="article:modified_time" content="2025-09-25T12:10:55.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="工具使用">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://modest2004.github.io/coverphoto.jpg">
   
     <link rel="alternate" href="/atom.xml" title="My Blog" type="application/atom+xml">
   
@@ -110,14 +108,48 @@
 
 <p>在Linux和macOS中，路径是由正斜杠（”&#x2F;“）分隔的。</p>
 <p>绝对路径是能完全确定文件位置的路径</p>
-<p>cd代表更改目录，”.“表示当前目录，”..“表示父目录。</p>
-<p>”~“回到主目录下。</p>
-<h1 id="shell工具和脚本"><a href="#shell工具和脚本" class="headerlink" title="shell工具和脚本"></a>shell工具和脚本</h1><p><img src="/coverphoto.jpg" alt="coverphoto"></p>
-
+<p><code>cd</code>代表更改目录，”<code>.</code>“表示当前目录，”<code>..</code>“表示父目录。</p>
+<p><code>pwd</code>:查看当面目录中有哪些内容</p>
+<p><code>ls</code>:列出当前目录中的文件</p>
+<p><code>cd..</code>:返回上一级</p>
+<p><code>~</code>:回到主目录下。</p>
+<p><code>&lt;</code>:查看，<code>&gt;</code>:输出</p>
+<p><code>sudo su</code>:可以以超级用户身份获取一个<code>shell</code></p>
+<p>在进入<code>root</code>的情况下可以执行成功的命令：<code>echo 500 &gt; brightness</code></p>
+<p><code>exit</code>:退出<code>root</code></p>
+<p>不需要进入root就可以执行成功的命令：<code>echo 1060 | sudo tee brightness</code>(更好的方法)</p>
+<p><code>xdg-open</code>：在适当的程序打开它，后面加文件名</p>
+<h1 id="shell工具和脚本"><a href="#shell工具和脚本" class="headerlink" title="shell工具和脚本"></a>shell工具和脚本</h1><h3 id="知识点1"><a href="#知识点1" class="headerlink" title="知识点1"></a>知识点1</h3><p><strong>插入模式</strong></p>
+<ul>
+<li>进入方式：按<code>i</code>，<code>a</code>，<code>o</code>等键</li>
+<li>退出方式：按<code>Esc</code></li>
+</ul>
+<p><strong>可视模式</strong>：</p>
+<ul>
+<li>进入方式：按<code>v</code>，<code>V</code>，<code>Ctrl+v</code></li>
+<li>退出方式：按<code>Esc</code></li>
+</ul>
+<p><strong>命令模式</strong>：</p>
+<ul>
+<li><p>进入方式：普通模式下按<code>：</code></p>
+</li>
+<li><p>保存并退出：<code>wq</code></p>
+</li>
+</ul>
+<h3 id="知识点2"><a href="#知识点2" class="headerlink" title="知识点2"></a>知识点2</h3><p>在 Linux&#x2F;Unix 系统的 shell（如 bash）中，<code>echo $?</code> 用于<strong>查看上一条命令的退出状态码</strong>。</p>
+<ul>
+<li><p><code>$?</code> 是一个特殊的环境变量，它会自动保存 “上一条执行的命令” 的退出状态（返回值）。</p>
+</li>
+<li><p><code>echo $?</code> 则是将这个状态码打印出来。</p>
+</li>
+</ul>
+<h3 id="知识点3"><a href="#知识点3" class="headerlink" title="知识点3"></a>知识点3</h3><p><code>!!</code> 是 shell 提供的<strong>历史扩展符</strong>，它的含义是 “引用上一条执行的命令”。</p>
+<h3 id="知识点4"><a href="#知识点4" class="headerlink" title="知识点4"></a>知识点4</h3><p><code>grep</code> 是一个<strong>强大的文本搜索工具</strong>，例如在 <code>test.txt</code> 中搜索 “hello”：<code>grep &quot;hello&quot; test.txt</code></p>
+<h3 id="知识点5"><a href="#知识点5" class="headerlink" title="知识点5"></a>知识点5</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://modest2004.github.io/2025/09/25/%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BD%BF%E7%94%A8shell/" data-id="cmg3jxisk0005ncp154pz1r5x" data-title="学习和使用shell" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://modest2004.github.io/2025/09/25/%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BD%BF%E7%94%A8shell/" data-id="cmhddz11l0009b8p14f5h6ghl" data-title="学习和使用shell" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -129,11 +161,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2025/09/28/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%A0%A1%E5%9B%AD%E4%BA%8C%E6%89%8B%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%85%A8%E5%A5%97%E6%B5%81%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2025/10/30/Java%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
-          搭建一个校园二手交易平台小程序的全套流程
+          Java笔记
         
       </div>
     </a>
@@ -168,7 +200,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA/" rel="tag">个人</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" rel="tag">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%89%A7/" rel="tag">美剧</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" rel="tag">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%89%A7/" rel="tag">美剧</a></li></ul>
     </div>
   </div>
 
@@ -178,7 +210,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E4%B8%AA%E4%BA%BA/" style="font-size: 10px;">个人</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">学习笔记</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" style="font-size: 10px;">工具使用</a> <a href="/tags/%E7%BE%8E%E5%89%A7/" style="font-size: 10px;">美剧</a>
+      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">学习笔记</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" style="font-size: 10px;">工具使用</a> <a href="/tags/%E7%BE%8E%E5%89%A7/" style="font-size: 10px;">美剧</a>
     </div>
   </div>
 
@@ -187,7 +219,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li></ul>
     </div>
   </div>
 
@@ -200,7 +232,15 @@
       <ul>
         
           <li>
-            <a href="/2025/09/28/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%A0%A1%E5%9B%AD%E4%BA%8C%E6%89%8B%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%85%A8%E5%A5%97%E6%B5%81%E7%A8%8B/">搭建一个校园二手交易平台小程序的全套流程</a>
+            <a href="/2025/10/30/js%E7%AC%94%E8%AE%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/30/html%E5%92%8Ccss%E7%AC%94%E8%AE%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/30/Java%E7%AC%94%E8%AE%B0/">Java笔记</a>
           </li>
         
           <li>
@@ -209,14 +249,6 @@
         
           <li>
             <a href="/2025/09/18/CS50%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/">CS50计算机导论</a>
-          </li>
-        
-          <li>
-            <a href="/2025/09/15/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">如何搭建属于自己的个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2025/09/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/">风骚律师观看指南</a>
           </li>
         
       </ul>
